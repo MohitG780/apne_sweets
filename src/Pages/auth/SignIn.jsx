@@ -11,6 +11,7 @@ const SignIn = () => {
     const log = (e) => {
         var flag = true;
         e.preventDefault();
+
         const emailLog = document.querySelector("#emailSign").value;
         const passlogin = document.querySelector("#signPass").value;
         const resignPass = document.querySelector("#resignPass").value;
@@ -45,10 +46,12 @@ const SignIn = () => {
         if (flag) {
             const obj = { uname: uname, email: emailLog, pass: passlogin };
             data.push(obj);
+
             document.querySelector("#emailSign").value = '';
             document.querySelector("#signPass").value = '';
             document.querySelector("#resignPass").value = '';
             document.querySelector('#signUname').value = '';
+
             setLogged(true)
             setUserName(`${uname}`)
             navigate('/menu');
@@ -56,29 +59,31 @@ const SignIn = () => {
         }
     }
 
-
     return (
         <div className="bgImage">
-            <div className="container">
-                <div id='registerContainer'>
-                    <h1>Register</h1>
-                    <form id='registerForm'>
-                        <div>
-                            <h3>Email-Id</h3>
-                            <input type='email' placeholder='email@abc.com' required autoFocus id='emailSign' />
-                            <h3>User Name </h3>
-                            <input type='text' placeholder='username' required id='signUname' />
-                            <h3> Password </h3>
-                            <input type='password' placeholder='password' required id='signPass' />
-                            <h3> Re-Enter Password </h3>
-                            <input type='text' placeholder='password' required id='resignPass' />
-                            <button onClick={log}> Register</button>
-                        </div>
-                    </form>
-                </div>
+            <div id='registerContainer'>
+                <h1>Register</h1>
+
+                <form id='registerForm'>
+                    <div>
+                        <h3>Email-Id</h3>
+                        <input type='email' placeholder='email@abc.com' required id='emailSign' />
+
+                        <h3>User Name</h3>
+                        <input type='text' placeholder='username' required id='signUname' />
+
+                        <h3>Password</h3>
+                        <input type='password' placeholder='password' required id='signPass' />
+
+                        <h3>Re-Enter Password</h3>
+                        <input type='password' placeholder='password' required id='resignPass' />
+
+                        <button onClick={log}> Register</button>
+                    </div>
+                </form>
             </div>
         </div>
     )
 }
 
-export default SignIn
+export default SignIn;

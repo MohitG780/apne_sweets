@@ -9,7 +9,6 @@ const Login = () => {
     const { setLogged, setOpenSnack, setUserName } = CartState();
     const [login, setLogin] = useState({ email: "", pass: "" });
 
-    // On Submit function for form
     const log = (e) => {
         e.preventDefault();
 
@@ -32,30 +31,42 @@ const Login = () => {
             })
         }
     }
-    // Handle Change for setting login details
+
     const handleChange = (e) => {
         setLogin({ ...login, [e.target.name]: e.target.value })
     }
 
     return (
         <div className="bgImage">
-            <div className="container">
-                <div id="registerContainer">
-                    <h1>Log In</h1>
-                    <form id='registerForm' onSubmit={log}>
-                        <div>
-                            <h3>Email-Id</h3>
-                            <input type='email' placeholder='email@abc.com' required autoFocus name='email' id='emailLog' onChange={handleChange} />
-                            <h3> Password </h3>
-                            <input type='password' placeholder='password' required id='passlogin' name='pass' onChange={handleChange} />
-                            <p id="notice"></p>
-                            <button type='submit'> Login </button>
-                        </div>
-                    </form>
-                </div>
+            <div id="registerContainer">
+                <h1>Log In</h1>
+
+                <form id='registerForm' onSubmit={log}>
+                    <div>
+                        <h3>Email-Id</h3>
+                        <input 
+                            type='email' 
+                            placeholder='email@abc.com' 
+                            required 
+                            name='email' 
+                            onChange={handleChange} 
+                        />
+
+                        <h3>Password</h3>
+                        <input 
+                            type='password' 
+                            placeholder='password' 
+                            required 
+                            name='pass' 
+                            onChange={handleChange} 
+                        />
+
+                        <button type='submit'> Login </button>
+                    </div>
+                </form>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Login;

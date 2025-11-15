@@ -1,144 +1,214 @@
+/* =====================================
+   TOP PICKS - PREMIUM MODERN REDESIGN
+=====================================*/
+
 #topPicks {
-	background-color: var(--bColor);
-	padding-block: 3rem;
-	width: 100%;
+    width: 100%;
+    padding-block: 4rem;
+    background: var(--bColor);
 }
 
+/* Title */
 #topPicks h1 {
-	color: var(--black);
-	font-size: 3rem;
-	font-weight: 900;
-	padding: 1rem 0;
-	text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+
+    background: linear-gradient(90deg, #000, #616161);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.08rem;
 }
 
+
+
+/* =====================================
+   GRID WRAPPER
+=====================================*/
 #topPicksList {
-	align-items: center;
-	box-sizing: border-box;
-	cursor: default;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: center;
-	padding: 2rem;
+    width: 100%;
+    padding: 1rem 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
+
+
+/* =====================================
+   CARD DESIGN (NEW & ATTRACTIVE)
+=====================================*/
 .topCardContainer {
-	align-items: center;
-	animation: slide-top 1s ease;
-	border-radius: 0.8rem;
-	box-shadow: 0px 0px 19px -1px rgba(32, 54, 145, 1);
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	text-align: center;
-	width: calc(100% / 4 - 32px);
+    width: calc(25% - 32px);
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 1.3rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    transition: all .35s ease;
+    animation: slide-top .9s ease both;
 }
 
 .topCardContainer:hover {
-	transform: scale(1.02);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 55px rgba(0,0,0,0.18);
 }
 
+
+
+/* =====================================
+   IMAGE AREA - Attractive Upgrade
+=====================================*/
 .topCardContainer > img {
-	height: 200px;
-	width: 100%;
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .45s ease, filter .45s ease;
 }
 
+.topCardContainer:hover > img {
+    transform: scale(1.08);
+    filter: brightness(1.07);
+}
+
+
+
+/* =====================================
+   TEXT & CONTENT
+=====================================*/
 .details_wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 0.7rem;
-	padding: 1rem 0;
-	width: 100%;
+    padding: 1.4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .topCardContainer h2 {
-	color: var(--black);
-	flex: 1;
-	font-size: 1.2rem;
-	font-weight: 800;
-	padding: 0 0.5rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--black);
+    padding: 0 0.3rem;
 }
 
+/* Price Row */
 .details {
-	align-items: center;
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .type img {
-	margin-right: 10px;
-	width: 20px;
+    width: 22px;
+    margin-right: 8px;
 }
 
 .details p {
-	font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--black);
 }
 
+
+
+/* =====================================
+   BUTTONS (New Premium Style)
+=====================================*/
 .topCardContainer button {
-	background-color: var(--black);
-	border: none;
-	border-radius: 0.5rem;
-	color: var(--white);
-	cursor: pointer;
-	font-size: 1.3rem;
-	margin: 0rem 0.5rem;
-	padding: 0.3rem 0.7rem;
+    width: 85%;
+    padding: 0.55rem 1rem;
+    margin: 0.35rem auto;
+
+    border-radius: 0.7rem;
+    border: none;
+    cursor: pointer;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    background: #000;
+    color: #fff;
+
+    transition: 0.25s ease;
 }
 
+/* Individual hover effects */
 .topCardContainer .add:hover {
-	background-color: green;
+    background: #14a44d;
 }
 
 .topCardContainer .delete:hover {
-	background-color: red;
+    background: #d32f2f;
 }
 
 .topCardContainer .addToWishlist:hover {
-	background-color: tomato;
+    background: #ff6347;
 }
 
 .topCardContainer .viewDetails:hover {
-	background-color: var(--main);
-	color: var(--black);
+    background: var(--main);
+    color: #000;
 }
 
+
+
+/* =====================================
+   ANIMATIONS
+=====================================*/
 @keyframes slide-top {
-	0% {
-		transform: translateY(100px);
-	}
-
-	100% {
-		transform: translateY(0px);
-	}
+    from {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
-@media screen and (max-width: 1500px) {
-	.topCardContainer {
-		justify-content: flex-start;
-		width: calc(100% / 3 - 32px);
-	}
+
+
+/* =====================================
+   RESPONSIVE RULES
+=====================================*/
+@media (max-width: 1500px) {
+    .topCardContainer {
+        width: calc(33.33% - 32px);
+    }
 }
 
-@media screen and (max-width: 930px) {
-	.topCardContainer {
-		width: calc(100% / 2 - 40px);
-	}
+@media (max-width: 1000px) {
+    .topCardContainer {
+        width: calc(50% - 32px);
+    }
 }
 
-@media screen and (max-width: 600px) {
-	.topCardContainer {
-		width: 75%;
-	}
+@media (max-width: 600px) {
+    .topCardContainer {
+        width: 85%;
+    }
 
-	#topPicks h1 {
-		font-size: 2rem;
-	}
+    #topPicks h1 {
+        font-size: 2.4rem;
+    }
 }
 
-@media screen and (max-width: 490px) {
-	.topCardContainer {
-		width: 100%;
-	}
+@media (max-width: 460px) {
+    .topCardContainer {
+        width: 95%;
+    }
 }
+

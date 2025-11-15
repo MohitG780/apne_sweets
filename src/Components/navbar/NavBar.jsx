@@ -79,10 +79,30 @@ const NavBar = ({ theme, setTheme }) => {
                                     <Link to="/create"><h1 onClick={hideNav}> Create Account </h1></Link>
                                 </>}
                             <hr />
-                            <div className='optionsM' >
-                                <h1 onClick={dark} id='themeSwitcher' > <i className="fa-solid fa-moon"></i> </h1>
-                                <Link to="/cart"><h1 onClick={hideNav} > <i className="fas fa-shopping-cart cart-btn"><span>{cart.length}</span></i></h1></Link>
-                            </div>
+                            <div className='optionsM'>
+    
+    <h1 onClick={dark} id='themeSwitcher'>
+        <i className="fa-solid fa-moon"></i>
+    </h1>
+
+    <Link to="/cart">
+        <h1 onClick={hideNav} className="cart-btn">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-count">{cart.length}</span>
+        </h1>
+    </Link>
+
+</div>
+
+
+
+
+
+
+
+
+
+
                         </div>)}
                     </div>
                     {/* Nav bar for Mobile Ends-----------------> */}

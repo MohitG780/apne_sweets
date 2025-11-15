@@ -1,134 +1,190 @@
-
+/* ===========================
+   MAIN PRODUCT CONTAINER
+=========================== */
 #productContainer {
-    margin: auto;
-    padding: 8rem 5rem 5rem 5rem;
     width: 90%;
+    margin: auto;
+    padding: 7rem 4rem;
+    background: #ffffff;
 }
 
-#productContainer>button {
-    background-color: var(--black);
+#productContainer > button {
+    background: #000;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
     border: none;
-    border-radius: 5px;
-    color: var(--bg);
     cursor: pointer;
-    font-size: 20px;
-    margin-bottom: 2rem;
-    padding: .3vh .8vh;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    transition: all .2s ease;
 }
 
+#productContainer > button:hover {
+    background: var(--main);
+    transform: translateX(-4px);
+}
+
+
+/* ===========================
+   PRODUCT DETAILS LAYOUT
+=========================== */
 #detail {
     display: flex;
-    gap: 1rem 2rem;
+    gap: 2.5rem;
     justify-content: space-between;
-    width: 100%;
 }
 
 #detail img {
-    width: 300px;
+    width: 340px;
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    transition: transform .3s ease;
 }
 
+#detail img:hover {
+    transform: scale(1.03);
+}
+
+
+/* ===========================
+   DETAILS BOX
+=========================== */
 #detailsProd {
-    display: flex;
     flex: 1.5;
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 0 0.5rem;
 }
 
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+.quantity i {
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.quantity i:hover {
+    transform: scale(1.2);
+}
+
+
+/* ===========================
+   BUTTONS
+=========================== */
 .addtoCart,
 .remove {
-    background-color: var(--black);
-    border: none;
-    border-radius: 5px;
-    color: var(--white);
+    background: #000;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border-radius: 0.6rem;
+    width: 65%;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
     cursor: pointer;
-    font-size: 1.3rem;
-    padding: .5rem 1rem;
-    width: 70% !important;
+    transition: .25s ease;
 }
 
 .addtoCart:hover {
-    background-color: green;
-    transform: scaleX(1.05);
+    background: green;
+    transform: scale(1.03);
 }
 
 .remove:hover {
-    background-color: red;
-    transform: scaleX(1.05);
+    background: red;
+    transform: scale(1.03);
 }
 
+/* Know More Button */
 .link {
-    background-color: var(--main);
-    border-radius: 5px;
-    color: var(--bg);
-    display: block;
-    font-size: 1.4rem;
+    margin-top: 0.7rem;
+    display: inline-block;
+    background: var(--main);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    width: 65%;
     text-align: center;
-    width: 70%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: .25s ease;
 }
 
 .link:hover {
-    transform: scaleX(1.05);
+    transform: scale(1.03);
 }
 
+
+/* ===========================
+   MORE SECTION (INSTRUCTIONS + VIDEO)
+=========================== */
 #more {
     display: flex;
-    flex: 1;
-    gap: 1rem;
     justify-content: space-between;
-    padding: 2rem 0rem;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 #instruction {
-    font-size: 16px;
-    line-height: 1.5rem;
-    text-align: justify;
+    font-size: 17px;
+    line-height: 1.7rem;
     width: 50%;
+    padding-right: 1rem;
+    text-align: justify;
 }
 
 #more iframe {
     flex: 1;
+    min-height: 350px;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-@media screen and (max-width:900px) {
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 900px) {
     #productContainer {
-        margin: auto;
-        padding: 8rem 1rem 5rem 1rem;
-        width: 100%;
+        padding: 7rem 1.5rem;
     }
 }
 
-@media screen and (max-width:650px) {
+@media (max-width: 650px) {
+
     #detail {
         flex-direction: column;
+        align-items: center;
     }
 
     #detail img {
-        margin: 0 2%;
-        width: 95%;
+        width: 90%;
     }
 
     #detailsProd {
-        margin: auto;
-        min-height: 50vh;
-        text-align: center;
         width: 95%;
+        text-align: center;
     }
 
     .addtoCart,
-    .remove {
-        width: 95% !important;
-    }
-
+    .remove,
     .link {
         width: 95%;
     }
 
     #more {
         flex-direction: column-reverse;
-        margin: auto;
     }
 
     #instruction {
-        width: 95%;
+        width: 100%;
     }
 }

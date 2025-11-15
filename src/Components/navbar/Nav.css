@@ -1,27 +1,37 @@
+/* NAV CONTAINER */
 #navContainer {
     background-color: var(--white);
-    box-shadow: 0px 22px 47px -32px rgba(55, 65, 176, 1);
+    box-shadow: 0px 4px 20px rgba(55, 65, 176, 0.18);
     position: fixed;
     width: 100%;
     z-index: 100;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* HEADER */
 .header {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2rem;
     width: 100%;
 }
 
+/* LOGO */
 .logo img {
     filter: invert(var(--invert));
     width: 150px;
+    transition: 0.3s ease;
 }
 
+.logo img:hover {
+    transform: scale(1.03);
+}
+
+/* NAVBAR (Desktop) */
 .header .navbar {
-    align-items: center;
     display: flex;
+    align-items: center;
     flex: 1;
     justify-content: center;
 }
@@ -29,62 +39,81 @@
 .header .navbar h1 {
     color: var(--black);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.18rem;
     font-weight: 600;
-    margin: 0 3rem;
+    margin: 0 2.2rem;
+    transition: 0.25s ease;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
 }
 
 .header .navbar h1:hover {
     color: var(--main);
+    background: rgba(55, 65, 176, 0.08);
 }
 
+/* RIGHT OPTIONS (Desktop) */
 .options {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-}
-
-.options .logged_in {
-    display: flex;
-    align-items: center;
-    padding: .5rem;
-    border-radius: .4rem;
-    border: 1px solid var(--black);
-}
-
-.options .logged_in span {
-    color: var(--black);
 }
 
 .options h1 {
     color: var(--black);
     cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 1rem;
+    font-size: 1.45rem;
+    margin: 0 1.2rem;
+    transition: 0.25s ease;
 }
 
 .options h1:hover {
     color: var(--main);
 }
 
+/* MOBILE NAV ICONS */
 .navbarMob {
     display: none;
+    align-items: center;
+    gap: 1.2rem;
 }
 
-.overlay {
+.navbarMob .fa-bars {
+    color: var(--black);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.navbarMob .fa-xmark {
+    color: var(--black);
+    cursor: pointer;
+    font-size: 2.4rem;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+
+/* MOBILE OPTIONS */
+.optionsM {
+    display: none;
     align-items: center;
-    background-color: var(--white);
+    gap: 1rem;
+}
+
+/* MOBILE OVERLAY MENU */
+.overlay {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
     justify-content: center;
+    background-color: var(--white);
+    width: 100%;
+    height: 100vh;
     position: fixed;
     right: 0;
     top: 0;
-    transition: 1s ease;
-    width: 100%;
     z-index: 500;
+    transition: transform 0.5s ease;
 }
 
 .overlay h1 {
@@ -92,57 +121,47 @@
     cursor: pointer;
     font-size: 2rem;
     margin: 1rem 2rem;
+    transition: 0.25s ease;
 }
 
 .overlay h1:hover {
-    color: var(--black);
-    text-decoration: underline !important;
+    color: var(--main);
 }
 
-.navbarMob .fa-xmark {
-    color: var(--black);
-    cursor: pointer;
-    font-size: 2.5rem;
-    position: absolute;
-    right: 10px;
-    top: 13px;
-}
-
-.navbarMob .fa-bars {
-    color: var(--black);
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
+/* CART BUTTON */
 .cart-btn {
     position: relative;
+    display: inline-block;
 }
 
-.cart-btn span {
-    color: var(--black);
-    font-size: 1rem;
-    font-weight: 500;
-    padding-left: 5px;
+.cart-btn i {
+    font-size: 1.6rem;
+}
+
+.cart-count {
     position: absolute;
-    top: -30%;
+    top: -6px;
+    right: -10px;
+    background: var(--main);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
+/* RESPONSIVE */
 @media screen and (max-width:1150px) {
-
     .header .navbar {
         display: none;
     }
-
-    .header .navbarMob {
+    .navbarMob {
         display: flex;
     }
-
-    .header .navbarMob .optionsM {
-        display: none;
-    }
-
 }
 
 @media screen and (max-width:650px) {
@@ -150,28 +169,19 @@
         display: none;
     }
 
-    .navbar {
-        padding: 1rem;
-    }
-
     .logo img {
-        width: 140px;
+        width: 130px;
     }
 
-    hr {
-        width: 50%;
-    }
-
-    .header .navbarMob .optionsM {
+    .optionsM {
         display: flex;
     }
 
-    .cart-btn span {
-        color: var(--black);
-        font-size: 1rem;
-        font-weight: 500;
-        padding-left: 5px;
-        position: absolute;
-        top: -5px;
+    .cart-count {
+        top: -4px;
+        right: -8px;
+        height: 16px;
+        min-width: 16px;
+        font-size: 0.65rem;
     }
 }

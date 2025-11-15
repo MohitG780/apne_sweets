@@ -1,97 +1,100 @@
-#registerContainer {
-    color: var(--black);
-    margin: auto;
-    padding: 5rem 0;
-    width: 40%;
-    animation: rotate-diagonal-tl 1s ease;
+/* Background wrapper */
+.bgImage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #ffffff, #ececec);
 }
 
+/* Container Card */
+#registerContainer {
+    width: 380px;
+    padding: 2.5rem 2rem;
+    background: #ffffff;
+    border-radius: 1.7rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    animation: fadeSlide 0.7s ease;
+}
+
+/* Heading */
 #registerContainer h1 {
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.7rem;
+    color: #000;
 }
 
+/* Form */
 #registerForm {
-    background-color: var(--bColor);
-    border: 1px solid black;
-    border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
 }
 
+/* Form inner box */
 #registerForm div {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
-    margin: 2vh auto;
-    gap: 1.5rem;
-    padding: 2rem 0;
-    width: 70%;
+    gap: 1.2rem;
 }
 
+/* Labels */
 #registerForm h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-#registerForm input {
-    border: none;
-    border-radius: 1rem;
-    font-size: 1.2rem;
-    font-weight: 400;
-    outline-color: var(--black);
-    padding: .4rem .7rem;
-    background-color: var(--white);
-    color: var(--black);
-}
-
-#registerForm button {
-    background-color: var(--black);
-    border: none;
-    border-radius: 1rem;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 1.2rem;
+    margin-bottom: -0.3rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: .3rem 1rem;
+}
+
+/* Input fields */
+#registerForm input {
+    font-size: 1.1rem;
+    padding: 0.65rem 1rem;
+    border-radius: 0.8rem;
+    border: 1px solid #d1d1d1;
+    background: #fafafa;
+    outline: none;
+    transition: all .2s ease;
+}
+
+#registerForm input:focus {
+    border-color: #000;
+    background: #fff;
+}
+
+/* Button */
+#registerForm button {
+    margin-top: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 0;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
 #registerForm button:hover {
-    background-color: var(--main);
+    background: var(--main);
 }
 
-@keyframes rotate-diagonal-tl {
-    0% {
-        transform: translateY(-200px);
+/* Animation */
+@keyframes fadeSlide {
+    from {
         opacity: 0;
+        transform: translateY(-40px);
     }
-
-    100% {
-        transform: translateY(0);
+    to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media screen and (max-width:900px) {
-    #registerContainer {
-        width: 60%;
-    }
-}
-
-
-@media screen and (max-width:600px) {
+/* Mobile */
+@media (max-width: 480px) {
     #registerContainer {
         width: 90%;
+        padding: 2rem 1.5rem;
     }
-
-    #registerForm div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 2rem 0;
-        width: 90%;
-    }
-
 }
