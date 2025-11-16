@@ -2,6 +2,8 @@
 
 A modern full-stack MERN eCommerce sweet shop website with authentication, product management, filters, cart, checkout, and a beautiful UI inspired by Indian culture.
 
+
+
 #Home Page
 
 <img width="1470" height="750" alt="Screenshot 2025-11-16 at 2 24 14 PM" src="https://github.com/user-attachments/assets/cf5a2433-cc6a-43cb-9c64-1836da48a1a2" />
